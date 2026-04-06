@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
+import buildcraft.core.block.BlockMarkerPath;
+import buildcraft.core.block.BlockMarkerVolume;
 import buildcraft.lib.block.BlockBCBase;
 import buildcraft.lib.registry.BCRegistration;
 
@@ -31,10 +33,10 @@ public final class BCCoreBlocks {
             .noCollision();
 
         markerVolume = BCRegistration.registerBlockAndItem(modId, "marker_volume",
-            new BlockBCBase(markerProps));
+            new BlockMarkerVolume(markerProps));
 
         markerPath = BCRegistration.registerBlockAndItem(modId, "marker_path",
-            new BlockBCBase(markerProps));
+            new BlockMarkerPath(markerProps));
 
         decorated = BCRegistration.registerBlockAndItem(modId, "decorated",
             new BlockBCBase(BlockBCBase.defaultBlockProperties()));
