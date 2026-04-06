@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "buildcraftapi",
+  "version": "${version}",
+  "name": "BuildCraft API",
+  "description": "Public API interfaces for BuildCraft cross-mod compatibility",
+  "authors": ["BuildCraft Team"],
+  "license": "MPL-2.0",
+  "icon": "assets/buildcraftapi/icon.png",
+  "environment": "*",
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": ">=26.1"
+  }
+}

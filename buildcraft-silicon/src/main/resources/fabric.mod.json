@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "buildcraftsilicon",
+  "version": "${version}",
+  "name": "BuildCraft Silicon",
+  "description": "Logic gates, assembly tables, lasers, and facades",
+  "authors": ["BuildCraft Team"],
+  "license": "MPL-2.0",
+  "icon": "assets/buildcraftsilicon/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["buildcraft.silicon.BCSilicon"],
+    "client": ["buildcraft.silicon.BCSiliconClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "fabric-api": "*",
+    "minecraft": ">=26.1",
+    "buildcraftcore": "*",
+    "buildcrafttransport": "*"
+  }
+}
