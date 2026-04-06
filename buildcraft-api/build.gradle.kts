@@ -17,6 +17,7 @@ dependencies {
     minecraft("com.mojang:minecraft:$minecraftVersion")
     implementation("net.fabricmc:fabric-loader:$fabricLoaderVersion")
     implementation("net.fabricmc.fabric-api:fabric-api:$fabricApiVersion")
+    compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 }
 
 tasks.withType<JavaCompile> {
