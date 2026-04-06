@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "buildcraftcore:gear_wood",
+    "buildcraftcore:gear_stone",
+    "buildcraftcore:gear_iron",
+    "buildcraftcore:gear_gold",
+    "buildcraftcore:gear_diamond"
+  ]
+}

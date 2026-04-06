@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "GIG", " G "],
+  "key": {
+    "G": { "item": "minecraft:gold_ingot" },
+    "I": { "item": "buildcraftcore:gear_iron" }
+  },
+  "result": { "id": "buildcraftcore:gear_gold", "count": 1 }
+}

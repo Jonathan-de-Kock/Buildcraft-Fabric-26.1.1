@@ -1,0 +1,12 @@
+{
+  "itemGroup.buildcraft.main": "BuildCraft",
+  "item.buildcraftcore.wrench": "Wrench",
+  "item.buildcraftcore.gear_wood": "Wood Gear",
+  "item.buildcraftcore.gear_stone": "Stone Gear",
+  "item.buildcraftcore.gear_iron": "Iron Gear",
+  "item.buildcraftcore.gear_gold": "Gold Gear",
+  "item.buildcraftcore.gear_diamond": "Diamond Gear",
+  "block.buildcraftcore.marker_volume": "Volume Marker",
+  "block.buildcraftcore.marker_path": "Path Marker",
+  "block.buildcraftcore.decorated": "Decorated Block"
+}

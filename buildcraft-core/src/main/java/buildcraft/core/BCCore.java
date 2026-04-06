@@ -11,5 +11,8 @@ public class BCCore implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("BuildCraft Core initializing");
+        BCCoreBlocks.register();
+        BCCoreItems.register();
+        BCCoreCreativeTab.register();
     }
 }
