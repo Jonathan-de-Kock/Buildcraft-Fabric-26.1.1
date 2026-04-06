@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
+import buildcraft.core.block.BlockEngineCreative;
+import buildcraft.core.block.BlockEngineRedstone;
 import buildcraft.core.block.BlockMarkerPath;
 import buildcraft.core.block.BlockMarkerVolume;
 import buildcraft.lib.block.BlockBCBase;
@@ -18,7 +20,8 @@ public final class BCCoreBlocks {
     public static Block markerVolume;
     public static Block markerPath;
     public static Block decorated;
-    // TODO Phase 4: engines
+    public static Block engineRedstone;
+    public static Block engineCreative;
     // TODO Phase 7: spring
 
     private BCCoreBlocks() {}
@@ -40,5 +43,15 @@ public final class BCCoreBlocks {
 
         decorated = BCRegistration.registerBlockAndItem(modId, "decorated",
             new BlockBCBase(BlockBCBase.defaultBlockProperties()));
+
+        BlockBehaviour.Properties engineProps = BlockBehaviour.Properties.of()
+            .strength(5.0f, 10.0f)
+            .sound(SoundType.METAL);
+
+        engineRedstone = BCRegistration.registerBlockAndItem(modId, "engine_redstone",
+            new BlockEngineRedstone(engineProps));
+
+        engineCreative = BCRegistration.registerBlockAndItem(modId, "engine_creative",
+            new BlockEngineCreative(engineProps));
     }
 }

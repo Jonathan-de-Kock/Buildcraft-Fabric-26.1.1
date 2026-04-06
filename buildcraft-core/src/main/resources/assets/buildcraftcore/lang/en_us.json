@@ -8,5 +8,7 @@
   "item.buildcraftcore.gear_diamond": "Diamond Gear",
   "block.buildcraftcore.marker_volume": "Volume Marker",
   "block.buildcraftcore.marker_path": "Path Marker",
-  "block.buildcraftcore.decorated": "Decorated Block"
+  "block.buildcraftcore.decorated": "Decorated Block",
+  "block.buildcraftcore.engine_redstone": "Redstone Engine",
+  "block.buildcraftcore.engine_creative": "Creative Engine"
 }

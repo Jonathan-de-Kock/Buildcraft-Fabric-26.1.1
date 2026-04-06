@@ -35,6 +35,9 @@ public final class BCCoreCreativeTab {
                     output.accept(BCCoreBlocks.markerVolume);
                     output.accept(BCCoreBlocks.markerPath);
                     output.accept(BCCoreBlocks.decorated);
+                    // Engines
+                    output.accept(BCCoreBlocks.engineRedstone);
+                    output.accept(BCCoreBlocks.engineCreative);
                 })
                 .build()
         );
