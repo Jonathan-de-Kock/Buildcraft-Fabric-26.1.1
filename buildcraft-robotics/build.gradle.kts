@@ -21,6 +21,8 @@ dependencies {
     api(project(":buildcraft-core"))
     api(project(":buildcraft-transport"))
     api(project(":buildcraft-silicon"))
+
+    compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 }
 
 tasks.withType<JavaCompile> {

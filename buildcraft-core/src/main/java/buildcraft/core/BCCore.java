@@ -1,9 +1,11 @@
 package buildcraft.core;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import buildcraft.core.command.CommandBuildCraft;
 import buildcraft.core.tile.BCCoreBlockEntities;
 
 public class BCCore implements ModInitializer {
@@ -17,5 +19,9 @@ public class BCCore implements ModInitializer {
         BCCoreBlockEntities.register();
         BCCoreItems.register();
         BCCoreCreativeTab.register();
+
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            CommandBuildCraft.register(dispatcher);
+        });
     }
 }
