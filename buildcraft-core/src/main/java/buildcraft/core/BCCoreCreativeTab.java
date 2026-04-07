@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public final class BCCoreCreativeTab {
@@ -19,7 +20,21 @@ public final class BCCoreCreativeTab {
         ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(BCCore.MOD_ID, "main"));
     public static CreativeModeTab MAIN_TAB;
 
+    /** Buildcraft mod ID prefixes to include in the creative tab. */
+    private static final String[] BC_NAMESPACES = {
+        "buildcraftcore", "buildcrafttransport", "buildcraftfactory",
+        "buildcraftenergy", "buildcraftsilicon", "buildcraftbuilders",
+        "buildcraftrobotics"
+    };
+
     private BCCoreCreativeTab() {}
+
+    private static boolean isBuildCraftItem(Identifier id) {
+        for (String ns : BC_NAMESPACES) {
+            if (ns.equals(id.getNamespace())) return true;
+        }
+        return false;
+    }
 
     public static void register() {
         MAIN_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
@@ -28,20 +43,13 @@ public final class BCCoreCreativeTab {
                 .icon(() -> new ItemStack(BCCoreItems.wrench))
                 .title(Component.translatable("itemGroup.buildcraft.main"))
                 .displayItems((params, output) -> {
-                    // Items
-                    output.accept(BCCoreItems.wrench);
-                    output.accept(BCCoreItems.gearWood);
-                    output.accept(BCCoreItems.gearStone);
-                    output.accept(BCCoreItems.gearIron);
-                    output.accept(BCCoreItems.gearGold);
-                    output.accept(BCCoreItems.gearDiamond);
-                    // Blocks
-                    output.accept(BCCoreBlocks.markerVolume);
-                    output.accept(BCCoreBlocks.markerPath);
-                    output.accept(BCCoreBlocks.decorated);
-                    // Engines
-                    output.accept(BCCoreBlocks.engineRedstone);
-                    output.accept(BCCoreBlocks.engineCreative);
+                    // Dynamically add ALL BuildCraft items from the registry
+                    for (Item item : BuiltInRegistries.ITEM) {
+                        Identifier id = BuiltInRegistries.ITEM.getKey(item);
+                        if (id != null && isBuildCraftItem(id)) {
+                            output.accept(item);
+                        }
+                    }
                 })
                 .build()
         );
