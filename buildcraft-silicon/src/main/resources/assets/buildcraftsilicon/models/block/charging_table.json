@@ -1,8 +1,84 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "ambientocclusion": false,
   "textures": {
     "top": "buildcraftsilicon:block/charging_table/top",
     "bottom": "buildcraftsilicon:block/charging_table/bottom",
-    "side": "buildcraftsilicon:block/charging_table/side"
+    "side": "buildcraftsilicon:block/charging_table/side",
+    "middle": "buildcraftsilicon:block/charging_table/middle",
+    "particle": "buildcraftsilicon:block/charging_table/side"
+  },
+  "elements": [
+    {
+      "comment": "corner pedestal NW",
+      "from": [0, 0, 0],
+      "to": [4, 6, 4],
+      "faces": {
+        "down":  {"uv": [0, 0, 4, 4], "texture": "#bottom"},
+        "up":    {"uv": [0, 0, 4, 4], "texture": "#middle"},
+        "north": {"uv": [12, 10, 16, 16], "texture": "#side"},
+        "south": {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "west":  {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "east":  {"uv": [12, 10, 16, 16], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "corner pedestal NE",
+      "from": [12, 0, 0],
+      "to": [16, 6, 4],
+      "faces": {
+        "down":  {"uv": [12, 0, 16, 4], "texture": "#bottom"},
+        "up":    {"uv": [12, 0, 16, 4], "texture": "#middle"},
+        "north": {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "south": {"uv": [12, 10, 16, 16], "texture": "#side"},
+        "west":  {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "east":  {"uv": [12, 10, 16, 16], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "corner pedestal SW",
+      "from": [0, 0, 12],
+      "to": [4, 6, 16],
+      "faces": {
+        "down":  {"uv": [0, 12, 4, 16], "texture": "#bottom"},
+        "up":    {"uv": [0, 12, 4, 16], "texture": "#middle"},
+        "north": {"uv": [12, 10, 16, 16], "texture": "#side"},
+        "south": {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "west":  {"uv": [12, 10, 16, 16], "texture": "#side"},
+        "east":  {"uv": [0, 10, 4, 16], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "corner pedestal SE",
+      "from": [12, 0, 12],
+      "to": [16, 6, 16],
+      "faces": {
+        "down":  {"uv": [12, 12, 16, 16], "texture": "#bottom"},
+        "up":    {"uv": [12, 12, 16, 16], "texture": "#middle"},
+        "north": {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "south": {"uv": [12, 10, 16, 16], "texture": "#side"},
+        "west":  {"uv": [0, 10, 4, 16], "texture": "#side"},
+        "east":  {"uv": [12, 10, 16, 16], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "top platform",
+      "from": [0, 6, 0],
+      "to": [16, 9, 16],
+      "faces": {
+        "up":    {"texture": "#top"},
+        "down":  {"texture": "#middle"},
+        "north": {"uv": [0, 7, 16, 10], "texture": "#side"},
+        "south": {"uv": [0, 7, 16, 10], "texture": "#side"},
+        "west":  {"uv": [0, 7, 16, 10], "texture": "#side"},
+        "east":  {"uv": [0, 7, 16, 10], "texture": "#side"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    }
   }
 }

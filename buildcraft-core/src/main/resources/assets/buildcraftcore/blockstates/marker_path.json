@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "buildcraftcore:block/marker_path" }
+    "": {"model": "buildcraftcore:block/marker_path"}
   }
 }

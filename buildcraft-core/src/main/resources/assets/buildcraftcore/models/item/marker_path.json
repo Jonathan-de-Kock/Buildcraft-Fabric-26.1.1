@@ -1,3 +1,6 @@
 {
-  "parent": "buildcraftcore:block/marker_path"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "buildcraftcore:item/marker_path"
+  }
 }

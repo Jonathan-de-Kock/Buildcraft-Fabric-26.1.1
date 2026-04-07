@@ -1,8 +1,138 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "ambientocclusion": false,
   "textures": {
     "top": "buildcraftsilicon:block/integration_table/top",
     "bottom": "buildcraftsilicon:block/integration_table/bottom",
-    "side": "buildcraftsilicon:block/integration_table/side"
+    "side": "buildcraftsilicon:block/integration_table/side",
+    "middle": "buildcraftsilicon:block/integration_table/middle",
+    "center": "buildcraftsilicon:block/integration_table/center",
+    "particle": "buildcraftsilicon:block/integration_table/side"
+  },
+  "elements": [
+    {
+      "comment": "base platform",
+      "from": [0, 0, 0],
+      "to": [16, 1, 16],
+      "faces": {
+        "down":  {"texture": "#bottom"},
+        "up":    {"texture": "#bottom"},
+        "north": {"uv": [0, 15, 16, 16], "texture": "#side"},
+        "south": {"uv": [0, 15, 16, 16], "texture": "#side"},
+        "west":  {"uv": [0, 15, 16, 16], "texture": "#side"},
+        "east":  {"uv": [0, 15, 16, 16], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "corner pedestal NW",
+      "from": [1, 1, 1],
+      "to": [5, 3, 5],
+      "faces": {
+        "up":    {"uv": [1, 1, 5, 5], "texture": "#middle"},
+        "north": {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "south": {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "west":  {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "east":  {"uv": [11, 13, 15, 15], "texture": "#middle"}
+      }
+    },
+    {
+      "comment": "corner pedestal NE",
+      "from": [11, 1, 1],
+      "to": [15, 3, 5],
+      "faces": {
+        "up":    {"uv": [11, 1, 15, 5], "texture": "#middle"},
+        "north": {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "south": {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "west":  {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "east":  {"uv": [11, 13, 15, 15], "texture": "#middle"}
+      }
+    },
+    {
+      "comment": "corner pedestal SW",
+      "from": [1, 1, 11],
+      "to": [5, 3, 15],
+      "faces": {
+        "up":    {"uv": [1, 11, 5, 15], "texture": "#middle"},
+        "north": {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "south": {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "west":  {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "east":  {"uv": [1, 13, 5, 15], "texture": "#middle"}
+      }
+    },
+    {
+      "comment": "corner pedestal SE",
+      "from": [11, 1, 11],
+      "to": [15, 3, 15],
+      "faces": {
+        "up":    {"uv": [11, 11, 15, 15], "texture": "#middle"},
+        "north": {"uv": [1, 13, 5, 15], "texture": "#middle"},
+        "south": {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "west":  {"uv": [11, 13, 15, 15], "texture": "#middle"},
+        "east":  {"uv": [1, 13, 5, 15], "texture": "#middle"}
+      }
+    },
+    {
+      "comment": "north wall",
+      "from": [0, 3, 0],
+      "to": [16, 9, 5],
+      "faces": {
+        "up":    {"uv": [0, 0, 16, 5], "texture": "#top"},
+        "down":  {"uv": [0, 0, 16, 5], "texture": "#bottom"},
+        "north": {"uv": [0, 7, 16, 13], "texture": "#side"},
+        "south": {"uv": [0, 7, 16, 13], "texture": "#middle"},
+        "west":  {"uv": [0, 7, 5, 13], "texture": "#side"},
+        "east":  {"uv": [11, 7, 16, 13], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "south wall",
+      "from": [0, 3, 11],
+      "to": [16, 9, 16],
+      "faces": {
+        "up":    {"uv": [0, 11, 16, 16], "texture": "#top"},
+        "down":  {"uv": [0, 11, 16, 16], "texture": "#bottom"},
+        "north": {"uv": [0, 7, 16, 13], "texture": "#middle"},
+        "south": {"uv": [0, 7, 16, 13], "texture": "#side"},
+        "west":  {"uv": [11, 7, 16, 13], "texture": "#side"},
+        "east":  {"uv": [0, 7, 5, 13], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "west wall center",
+      "from": [0, 3, 5],
+      "to": [5, 9, 11],
+      "faces": {
+        "up":    {"uv": [0, 5, 5, 11], "texture": "#top"},
+        "down":  {"uv": [0, 5, 5, 11], "texture": "#bottom"},
+        "west":  {"uv": [5, 7, 11, 13], "texture": "#side"},
+        "east":  {"uv": [5, 7, 11, 13], "texture": "#middle"}
+      }
+    },
+    {
+      "comment": "east wall center",
+      "from": [11, 3, 5],
+      "to": [16, 9, 11],
+      "faces": {
+        "up":    {"uv": [11, 5, 16, 11], "texture": "#top"},
+        "down":  {"uv": [11, 5, 16, 11], "texture": "#bottom"},
+        "west":  {"uv": [5, 7, 11, 13], "texture": "#middle"},
+        "east":  {"uv": [5, 7, 11, 13], "texture": "#side"}
+      }
+    },
+    {
+      "comment": "center pit floor",
+      "from": [5, 3, 5],
+      "to": [11, 7, 11],
+      "faces": {
+        "up":    {"uv": [5, 5, 11, 11], "texture": "#center"},
+        "down":  {"uv": [5, 5, 11, 11], "texture": "#bottom"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    }
   }
 }

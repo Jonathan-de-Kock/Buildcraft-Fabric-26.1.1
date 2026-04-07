@@ -6,13 +6,19 @@
 package buildcraft.core.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import buildcraft.core.tile.BlockEntityMarkerPath;
 import buildcraft.lib.block.BlockBCTile;
 
 public class BlockMarkerPath extends BlockBCTile<BlockEntityMarkerPath> {
+    private static final VoxelShape SHAPE = Block.box(7, 0, 7, 9, 9, 9);
+
     public BlockMarkerPath(Properties properties) {
         super(properties);
     }
@@ -20,5 +26,17 @@ public class BlockMarkerPath extends BlockBCTile<BlockEntityMarkerPath> {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new BlockEntityMarkerPath(pos, state);
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+                                  CollisionContext context) {
+        return SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
+                                           CollisionContext context) {
+        return SHAPE;
     }
 }

@@ -26,17 +26,18 @@ public final class BCSiliconBlocks {
 
         BlockBehaviour.Properties tableProps = BlockBehaviour.Properties.of()
             .strength(5.0f, 10.0f)
-            .sound(SoundType.METAL);
+            .sound(SoundType.METAL)
+            .noOcclusion();
 
         assemblyTable = BCRegistration.registerBlockAndItem(modId, "assembly_table",
             tableProps, BlockAssemblyTable::new);
 
         integrationTable = BCRegistration.registerBlockAndItem(modId, "integration_table",
-            BlockBehaviour.Properties.of().strength(5.0f, 10.0f).sound(SoundType.METAL),
+            BlockBehaviour.Properties.of().strength(5.0f, 10.0f).sound(SoundType.METAL).noOcclusion(),
             BlockAssemblyTable::new);  // Reuse assembly table block class for now
 
         chargingTable = BCRegistration.registerBlockAndItem(modId, "charging_table",
-            BlockBehaviour.Properties.of().strength(5.0f, 10.0f).sound(SoundType.METAL),
+            BlockBehaviour.Properties.of().strength(5.0f, 10.0f).sound(SoundType.METAL).noOcclusion(),
             BlockAssemblyTable::new);  // Reuse assembly table block class for now
 
         BlockBehaviour.Properties laserProps = BlockBehaviour.Properties.of()

@@ -4,31 +4,37 @@
 
 | | Reference (1.12.2/Forge) | Port (26.1/Fabric) | Gap |
 |---|---|---|---|
-| **Java files** | 1,062 | 149 | ~86% missing |
+| **Java files** | 1,062 | ~155 | ~85% missing |
 | **Blocks** | 41 | 24 | 17 missing |
 | **Items** | 60+ | 20 | 40+ missing |
 | **Tile/Block Entities** | 42 | ~15 | 27 missing |
 | **Pipe types** | 40+ | 14 | 26+ missing |
-| **Textures** | 985 | ~52 | ~95% missing/broken |
-| **Models** | 414 | ~136 | ~67% missing |
+| **Textures** | 985 | ~110 | ~89% missing |
+| **Models** | 414 | ~150 | ~64% missing |
 | **Recipes** | 52 | 0 | 100% missing |
 | **GUIs/Containers** | 98/27 | 0 | 100% missing |
 | **Statements (gates)** | 79 | 0 | 100% missing |
 
-The port has correct scaffolding (module structure, registration, networking, build system) but is functionally hollow — pipe flows don't move anything, machines don't operate, many textures are broken placeholders, and there are zero GUIs or recipes.
+All registered blocks/items now have correct textures, proper 3D models matching the reference geometry, accurate collision shapes, and isometric inventory display. The mod is visually representative of BuildCraft but functionally hollow — no pipe transport, no machine logic, no power generation.
 
 ---
 
 ## Phase 0: Fix Broken Foundations (Textures & Models) ✅ COMPLETE
 
-Nothing else matters if items/blocks are invisible in-game. This is the fastest way to make the mod *feel* like BuildCraft.
+- [x] **Replace placeholder textures** — Factory (6→18), silicon (4→15), builders (5→24), robotics (3→5) upgraded with proper multi-face textures from the reference project.
+- [x] **Fix pipe item models** — All 14 pipe items now use 3D pipe segment models with per-type textures from the reference `textures/pipes/` directory.
+- [x] **Audit all blockstate → model → texture chains** — All chains validated. Zero broken references.
+- [x] **Port missing textures for existing blocks** — Core (engines, markers, gears, wrench), energy (oil, fuel), transport (pipe sprites) all verified identical to reference.
+- [x] **Engine models** — 3-element models (base plate + piston + trunk) matching reference `engine_base.json` geometry with proper UV mapping. Resting position (piston against base). Removed broken yellow/red placeholder front textures. Copied trunk/chamber textures from lib module.
+- [x] **Pipe connection-aware rendering** — `BlockPipeHolder` now has 6 `BooleanProperty` for connections, multipart blockstate with conditional arms, dynamic `VoxelShape`. (Originally Phase 2a)
+- [x] **Tank model** — Inset glass sides [2,0,2]→[14,16,14] with full-width caps. Matching collision shape.
+- [x] **Marker models** — Centered torch shape (2x9x2 stick) matching reference `torch_center_lit.json`. Item models use 2D torch sprites. Proper collision shapes.
+- [x] **Silicon table models** — Assembly table (3-element enchanting-table shape, top at y=9), integration table (10-element with corner pedestals and center pit), charging table (5-element with corner pillars and top platform). All matching reference geometry.
+- [x] **Laser model** — Piston-like shape (base plate + emitter shaft) with directional collision shapes for all 6 facings.
+- [x] **`noOcclusion`** — Added to engines, tank, tables, laser, markers for correct neighbor face rendering.
+- [x] **Isometric display transforms** — All non-standard blocks render correctly in creative inventory.
 
-- [x] **Replace placeholder textures** — Factory (6→18 textures), silicon (4→12), builders (5→24), robotics (3→5) upgraded from single-color placeholders to proper multi-face textures copied from the reference project.
-- [x] **Fix pipe item models** — Verified all 14 pipe item textures are already the correct originals from BuildCraft (small file sizes are genuine 16x16 sprites, not placeholders).
-- [x] **Audit all blockstate → model → texture chains** — All 24 blockstates, 44 item models, and 68 total model files verified. Zero broken references.
-- [x] **Port missing textures for existing blocks** — Verified core (engines, markers, gears, wrench), energy (oil, fuel), and transport textures are all identical to reference originals. No changes needed.
-
-**Deliverable:** Every registered block/item renders its correct BuildCraft texture in-game.
+**Deliverable:** Every registered block/item renders its correct BuildCraft shape and texture in-game. ✅
 
 ---
 
@@ -82,11 +88,11 @@ Everything downstream depends on these systems. Without GUIs, energy transfer, a
 
 Pipes are BuildCraft's identity. A BuildCraft port without working pipes is not BuildCraft.
 
-### 2a. Dynamic Pipe Shapes
+### 2a. Dynamic Pipe Shapes ✅ COMPLETE
 
-- [ ] Replace the hardcoded cross shape in `BlockPipeHolder` with connection-aware bounding boxes
-- [ ] Center section + per-direction extension (match reference `PipeBlockModel`)
-- [ ] Proper collision/selection shapes
+- [x] Replace the hardcoded cross shape in `BlockPipeHolder` with connection-aware bounding boxes
+- [x] Center section + per-direction extension via multipart blockstate
+- [x] Proper collision/selection shapes synced from block entity connection state
 
 ### 2b. Item Pipe Flow (`PipeFlowItems`)
 
@@ -403,10 +409,10 @@ If working iteratively, each stage produces a more playable mod:
 
 | Priority | Phase | Effort | Result |
 |---|---|---|---|
-| **P0** | Phase 0 — Textures | Small | Blocks/items look correct |
+| ~~**P0**~~ | ~~Phase 0 — Textures & Models~~ | ~~Small~~ | ~~Blocks/items look correct~~ ✅ |
 | **P1** | Phase 1a-b — GUI + MJ | Medium | Can open GUIs, power system exists |
 | **P1** | Phase 1c — Engines | Medium | Engines produce power |
-| **P2** | Phase 2a-d — Pipe flows | Large | Core pipe loop works (items/fluids/power move) |
+| **P2** | Phase 2b-d — Pipe flows | Large | Core pipe loop works (items/fluids/power move) |
 | **P2** | Phase 2e-f — All pipe types | Medium | Full pipe variety |
 | **P3** | Phase 3a-f — Factory | Medium | Machines actually do things |
 | **P3** | Phase 4 — Energy/Fluids | Medium | Oil/fuel, engine fuel chain |

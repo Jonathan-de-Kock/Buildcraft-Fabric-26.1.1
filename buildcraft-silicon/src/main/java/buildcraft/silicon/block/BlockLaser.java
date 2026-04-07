@@ -8,6 +8,7 @@ package buildcraft.silicon.block;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -17,6 +18,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import buildcraft.lib.block.BlockBCTile;
 import buildcraft.silicon.tile.BCSlnBlockEntities;
@@ -24,9 +28,35 @@ import buildcraft.silicon.tile.BlockEntityLaser;
 
 /**
  * The laser block. Faces a direction and provides energy to nearby tables.
+ * Shape: base plate + emitter shaft (similar to engines).
  */
 public class BlockLaser extends BlockBCTile<BlockEntityLaser> {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
+
+    private static final VoxelShape SHAPE_UP = Shapes.or(
+        Block.box(0, 0, 0, 16, 4, 16),
+        Block.box(5, 4, 5, 11, 13, 11)
+    );
+    private static final VoxelShape SHAPE_DOWN = Shapes.or(
+        Block.box(0, 12, 0, 16, 16, 16),
+        Block.box(5, 3, 5, 11, 12, 11)
+    );
+    private static final VoxelShape SHAPE_NORTH = Shapes.or(
+        Block.box(0, 0, 12, 16, 16, 16),
+        Block.box(5, 5, 3, 11, 11, 12)
+    );
+    private static final VoxelShape SHAPE_SOUTH = Shapes.or(
+        Block.box(0, 0, 0, 16, 16, 4),
+        Block.box(5, 5, 4, 11, 11, 13)
+    );
+    private static final VoxelShape SHAPE_WEST = Shapes.or(
+        Block.box(12, 0, 0, 16, 16, 16),
+        Block.box(3, 5, 5, 12, 11, 11)
+    );
+    private static final VoxelShape SHAPE_EAST = Shapes.or(
+        Block.box(0, 0, 0, 4, 16, 16),
+        Block.box(4, 5, 5, 13, 11, 11)
+    );
 
     public BlockLaser(Properties properties) {
         super(properties);
@@ -46,6 +76,29 @@ public class BlockLaser extends BlockBCTile<BlockEntityLaser> {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new BlockEntityLaser(BCSlnBlockEntities.LASER, pos, state);
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+                                  CollisionContext context) {
+        return getLaserShape(state.getValue(FACING));
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
+                                           CollisionContext context) {
+        return getLaserShape(state.getValue(FACING));
+    }
+
+    private static VoxelShape getLaserShape(Direction facing) {
+        return switch (facing) {
+            case UP -> SHAPE_UP;
+            case DOWN -> SHAPE_DOWN;
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            case WEST -> SHAPE_WEST;
+            case EAST -> SHAPE_EAST;
+        };
     }
 
     @Override
