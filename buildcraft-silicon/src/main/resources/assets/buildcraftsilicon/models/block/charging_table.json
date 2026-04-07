@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftsilicon:block/charging_table"
+    "top": "buildcraftsilicon:block/charging_table/top",
+    "bottom": "buildcraftsilicon:block/charging_table/bottom",
+    "side": "buildcraftsilicon:block/charging_table/side"
   }
 }

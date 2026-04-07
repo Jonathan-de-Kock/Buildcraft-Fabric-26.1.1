@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftfactory:block/chute"
+    "top": "buildcraftfactory:block/chute/top",
+    "bottom": "buildcraftfactory:block/chute/bottom",
+    "side": "buildcraftfactory:block/chute/side"
   }
 }

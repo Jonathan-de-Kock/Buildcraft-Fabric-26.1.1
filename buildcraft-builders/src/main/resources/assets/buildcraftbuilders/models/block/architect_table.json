@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "buildcraftbuilders:block/architect_table"
+    "up": "buildcraftbuilders:block/architect/top",
+    "down": "buildcraftbuilders:block/architect/bottom",
+    "north": "buildcraftbuilders:block/architect/front",
+    "south": "buildcraftbuilders:block/architect/back",
+    "east": "buildcraftbuilders:block/architect/side",
+    "west": "buildcraftbuilders:block/architect/side",
+    "particle": "buildcraftbuilders:block/architect/side"
   }
 }

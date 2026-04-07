@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "buildcrafttransport:item/pipe_segment",
   "textures": {
-    "layer0": "buildcrafttransport:item/pipe_structure"
+    "pipe": "buildcrafttransport:block/pipe_structure"
   }
 }

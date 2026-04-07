@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftfactory:block/flood_gate"
+    "top": "buildcraftfactory:block/flood_gate/top",
+    "bottom": "buildcraftfactory:block/flood_gate/top",
+    "side": "buildcraftfactory:block/flood_gate/side"
   }
 }

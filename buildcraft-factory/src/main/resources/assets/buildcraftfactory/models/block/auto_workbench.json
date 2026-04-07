@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftfactory:block/auto_workbench"
+    "top": "buildcraftfactory:block/auto_workbench/top",
+    "bottom": "buildcraftfactory:block/auto_workbench/bottom",
+    "side": "buildcraftfactory:block/auto_workbench/side"
   }
 }

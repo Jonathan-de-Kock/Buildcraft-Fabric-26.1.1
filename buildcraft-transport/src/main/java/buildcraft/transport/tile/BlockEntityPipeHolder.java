@@ -17,6 +17,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,6 +29,7 @@ import buildcraft.api.transport.pipe.IPipeHolder.PipeMessageReceiver;
 import buildcraft.lib.misc.data.IdAllocator;
 import buildcraft.lib.net.PacketBufferBC;
 import buildcraft.lib.tile.BlockEntityBCBase;
+import buildcraft.transport.block.BlockPipeHolder;
 import buildcraft.transport.pipe.Pipe;
 import buildcraft.transport.pipe.PipeRegistryImpl;
 
@@ -62,12 +64,26 @@ public class BlockEntityPipeHolder extends BlockEntityBCBase implements IPipeHol
         if (needsConnectionUpdate) {
             pipe.updateConnections();
             needsConnectionUpdate = false;
+            syncConnectionState();
             if (!level.isClientSide()) {
                 sendNetworkUpdate(NET_RENDER_DATA);
             }
         }
         if (!level.isClientSide()) {
             pipe.onTick();
+        }
+    }
+
+    /** Sync pipe connection booleans into the blockstate properties. */
+    private void syncConnectionState() {
+        if (level == null || pipe == null) return;
+        BlockState current = getBlockState();
+        BlockState updated = current;
+        for (Direction dir : Direction.values()) {
+            updated = updated.setValue(BlockPipeHolder.getProperty(dir), pipe.isConnected(dir));
+        }
+        if (updated != current) {
+            level.setBlock(worldPosition, updated, Block.UPDATE_ALL);
         }
     }
 

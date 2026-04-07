@@ -1,8 +1,12 @@
 {
-  "parent": "minecraft:block/orientable",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "top": "buildcraftrobotics:block/zone_planner_top",
-    "front": "buildcraftrobotics:block/zone_planner_front",
-    "side": "buildcraftrobotics:block/zone_planner_side"
+    "up": "buildcraftrobotics:block/zone_planner/top",
+    "down": "buildcraftrobotics:block/zone_planner/top",
+    "north": "buildcraftrobotics:block/zone_planner/front",
+    "south": "buildcraftrobotics:block/zone_planner/back",
+    "east": "buildcraftrobotics:block/zone_planner/right",
+    "west": "buildcraftrobotics:block/zone_planner/left",
+    "particle": "buildcraftrobotics:block/zone_planner/front"
   }
 }

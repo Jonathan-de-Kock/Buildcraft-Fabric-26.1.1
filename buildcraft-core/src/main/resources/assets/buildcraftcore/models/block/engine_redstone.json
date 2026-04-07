@@ -1,12 +1,78 @@
 {
-  "parent": "minecraft:block/cube",
+  "ambientocclusion": false,
   "textures": {
-    "up": "buildcraftcore:block/engine_redstone_front",
-    "down": "buildcraftcore:block/engine_redstone_back",
-    "north": "buildcraftcore:block/engine_redstone_side",
-    "south": "buildcraftcore:block/engine_redstone_side",
-    "east": "buildcraftcore:block/engine_redstone_side",
-    "west": "buildcraftcore:block/engine_redstone_side",
+    "back": "buildcraftcore:block/engine_redstone_back",
+    "side": "buildcraftcore:block/engine_redstone_side",
+    "trunk": "buildcraftlib:block/engine/trunk_green",
+    "chamber": "buildcraftlib:block/engine/chamber_base",
     "particle": "buildcraftcore:block/engine_redstone_side"
+  },
+  "elements": [
+    {
+      "comment": "base - mounting plate",
+      "from": [0, 0, 0],
+      "to": [16, 4, 16],
+      "faces": {
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#back"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#back"},
+        "north": {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "south": {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "west":  {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "east":  {"uv": [0, 0, 16, 4],  "texture": "#side"}
+      }
+    },
+    {
+      "comment": "piston - resting against base",
+      "from": [0, 4, 0],
+      "to": [16, 8, 16],
+      "faces": {
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#back"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#back"},
+        "north": {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "south": {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "west":  {"uv": [0, 0, 16, 4],  "texture": "#side"},
+        "east":  {"uv": [0, 0, 16, 4],  "texture": "#side"}
+      }
+    },
+    {
+      "comment": "trunk - visible above piston",
+      "from": [4, 8, 4],
+      "to": [12, 16, 12],
+      "faces": {
+        "down":  {"uv": [0, 0, 8, 8],   "texture": "#trunk"},
+        "up":    {"uv": [0, 0, 8, 8],   "texture": "#trunk"},
+        "north": {"uv": [8, 4, 16, 12], "texture": "#trunk"},
+        "south": {"uv": [8, 4, 16, 12], "texture": "#trunk"},
+        "west":  {"uv": [8, 4, 16, 12], "texture": "#trunk"},
+        "east":  {"uv": [8, 4, 16, 12], "texture": "#trunk"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "ground": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 3, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "fixed": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 45, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.4, 0.4, 0.4]
+    }
   }
 }

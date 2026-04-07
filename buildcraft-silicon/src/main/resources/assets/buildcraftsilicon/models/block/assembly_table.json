@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftsilicon:block/assembly_table"
+    "top": "buildcraftsilicon:block/assembly_table/top",
+    "bottom": "buildcraftsilicon:block/assembly_table/bottom",
+    "side": "buildcraftsilicon:block/assembly_table/side"
   }
 }

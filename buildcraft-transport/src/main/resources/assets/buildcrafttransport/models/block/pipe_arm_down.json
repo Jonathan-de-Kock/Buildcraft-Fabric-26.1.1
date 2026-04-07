@@ -1,0 +1,19 @@
+{
+  "textures": {
+    "pipe": "buildcrafttransport:block/pipe_stone",
+    "particle": "buildcrafttransport:block/pipe_stone"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 4, 12],
+      "faces": {
+        "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    }
+  ]
+}

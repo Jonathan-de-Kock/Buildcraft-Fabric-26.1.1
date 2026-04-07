@@ -1,6 +1,9 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "all": "buildcraftbuilders:block/filler"
+    "top": "buildcraftbuilders:block/filler/top",
+    "bottom": "buildcraftbuilders:block/filler/bottom",
+    "front": "buildcraftbuilders:block/filler/front",
+    "side": "buildcraftbuilders:block/filler/side"
   }
 }

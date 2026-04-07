@@ -46,7 +46,8 @@ public final class BCCoreBlocks {
 
         BlockBehaviour.Properties engineProps = BlockBehaviour.Properties.of()
             .strength(5.0f, 10.0f)
-            .sound(SoundType.METAL);
+            .sound(SoundType.METAL)
+            .noOcclusion();
 
         engineRedstone = BCRegistration.registerBlockAndItem(modId, "engine_redstone",
             engineProps, BlockEngineRedstone::new);

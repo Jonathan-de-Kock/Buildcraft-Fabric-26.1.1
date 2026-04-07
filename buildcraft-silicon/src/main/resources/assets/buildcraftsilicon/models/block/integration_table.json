@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "buildcraftsilicon:block/integration_table"
+    "top": "buildcraftsilicon:block/integration_table/top",
+    "bottom": "buildcraftsilicon:block/integration_table/bottom",
+    "side": "buildcraftsilicon:block/integration_table/side"
   }
 }
