@@ -5,14 +5,87 @@
   },
   "elements": [
     {
-      "from": [4, 4, 4],
-      "to": [12, 12, 12],
+      "comment": "center",
+      "from": [5, 5, 5],
+      "to": [11, 11, 11],
+      "faces": {
+        "up":    {"texture": "#pipe"},
+        "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_down",
+      "from": [5, 0, 5],
+      "to": [11, 5, 11],
       "faces": {
         "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_up",
+      "from": [5, 11, 5],
+      "to": [11, 16, 11],
+      "faces": {
         "up":    {"texture": "#pipe"},
         "north": {"texture": "#pipe"},
         "south": {"texture": "#pipe"},
-        "west":  {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_north",
+      "from": [5, 5, 0],
+      "to": [11, 11, 5],
+      "faces": {
+        "up":    {"texture": "#pipe"},
+        "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_south",
+      "from": [5, 5, 11],
+      "to": [11, 11, 16],
+      "faces": {
+        "up":    {"texture": "#pipe"},
+        "down":  {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
+        "east":  {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_west",
+      "from": [0, 5, 5],
+      "to": [5, 11, 11],
+      "faces": {
+        "up":    {"texture": "#pipe"},
+        "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
+        "west":  {"texture": "#pipe"}
+      }
+    },
+    {
+      "comment": "arm_east",
+      "from": [11, 5, 5],
+      "to": [16, 11, 11],
+      "faces": {
+        "up":    {"texture": "#pipe"},
+        "down":  {"texture": "#pipe"},
+        "north": {"texture": "#pipe"},
+        "south": {"texture": "#pipe"},
         "east":  {"texture": "#pipe"}
       }
     }

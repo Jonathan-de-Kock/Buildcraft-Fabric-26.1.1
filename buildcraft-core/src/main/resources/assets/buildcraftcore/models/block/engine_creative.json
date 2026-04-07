@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "buildcraftcore:block/engine_creative"
+    "up": "buildcraftcore:block/engine_creative_front",
+    "down": "buildcraftcore:block/engine_creative_back",
+    "north": "buildcraftcore:block/engine_creative_side",
+    "south": "buildcraftcore:block/engine_creative_side",
+    "east": "buildcraftcore:block/engine_creative_side",
+    "west": "buildcraftcore:block/engine_creative_side",
+    "particle": "buildcraftcore:block/engine_creative_side"
   }
 }

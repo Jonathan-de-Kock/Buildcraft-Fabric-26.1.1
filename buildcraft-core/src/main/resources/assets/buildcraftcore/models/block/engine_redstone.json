@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "buildcraftcore:block/engine_redstone"
+    "up": "buildcraftcore:block/engine_redstone_front",
+    "down": "buildcraftcore:block/engine_redstone_back",
+    "north": "buildcraftcore:block/engine_redstone_side",
+    "south": "buildcraftcore:block/engine_redstone_side",
+    "east": "buildcraftcore:block/engine_redstone_side",
+    "west": "buildcraftcore:block/engine_redstone_side",
+    "particle": "buildcraftcore:block/engine_redstone_side"
   }
 }
