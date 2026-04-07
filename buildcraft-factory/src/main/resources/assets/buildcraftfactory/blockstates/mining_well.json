@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up": {"model": "buildcraftfactory:block/mining_well"},
+    "facing=down": {"model": "buildcraftfactory:block/mining_well", "x": 180},
+    "facing=north": {"model": "buildcraftfactory:block/mining_well", "x": 90},
+    "facing=south": {"model": "buildcraftfactory:block/mining_well", "x": 90, "y": 180},
+    "facing=west": {"model": "buildcraftfactory:block/mining_well", "x": 90, "y": 270},
+    "facing=east": {"model": "buildcraftfactory:block/mining_well", "x": 90, "y": 90}
+  }
+}
