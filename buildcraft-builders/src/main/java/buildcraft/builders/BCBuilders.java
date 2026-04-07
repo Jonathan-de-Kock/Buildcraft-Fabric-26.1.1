@@ -15,5 +15,14 @@ public class BCBuilders implements ModInitializer {
         LOGGER.info("BuildCraft Builders initializing");
         BCBuildersBlocks.register();
         BCBldBlockEntities.register();
+
+        net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents
+            .modifyOutputEvent(buildcraft.core.BCCoreCreativeTab.TAB_KEY).register(output -> {
+                output.accept(BCBuildersBlocks.quarry);
+                output.accept(BCBuildersBlocks.filler);
+                output.accept(BCBuildersBlocks.builder);
+                output.accept(BCBuildersBlocks.architectTable);
+                output.accept(BCBuildersBlocks.electronicLibrary);
+            });
     }
 }

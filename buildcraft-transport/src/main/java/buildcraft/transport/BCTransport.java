@@ -9,7 +9,10 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+
 import buildcraft.api.transport.pipe.PipeApi;
+import buildcraft.core.BCCoreCreativeTab;
 import buildcraft.transport.pipe.PipeRegistryImpl;
 
 public class BCTransport implements ModInitializer {
@@ -37,6 +40,24 @@ public class BCTransport implements ModInitializer {
 
         // 6. Register items (depends on pipe definitions and blocks)
         BCTransportItems.register();
+
+        // 7. Add items to creative tab
+        CreativeModeTabEvents.modifyOutputEvent(BCCoreCreativeTab.TAB_KEY).register(output -> {
+            output.accept(BCTransportItems.pipeStoneItem);
+            output.accept(BCTransportItems.pipeCobbleItem);
+            output.accept(BCTransportItems.pipeWoodItem);
+            output.accept(BCTransportItems.pipeGoldItem);
+            output.accept(BCTransportItems.pipeIronItem);
+            output.accept(BCTransportItems.pipeDiamondItem);
+            output.accept(BCTransportItems.pipeVoidItem);
+            output.accept(BCTransportItems.pipeStoneFluid);
+            output.accept(BCTransportItems.pipeCobbleFluid);
+            output.accept(BCTransportItems.pipeWoodFluid);
+            output.accept(BCTransportItems.pipeStonePower);
+            output.accept(BCTransportItems.pipeCobblePower);
+            output.accept(BCTransportItems.pipeWoodPower);
+            output.accept(BCTransportItems.pipeStructure);
+        });
 
         LOGGER.info("BuildCraft Transport initialized with {} pipe definitions",
             PipeRegistryImpl.INSTANCE.getAllDefinitions().size());

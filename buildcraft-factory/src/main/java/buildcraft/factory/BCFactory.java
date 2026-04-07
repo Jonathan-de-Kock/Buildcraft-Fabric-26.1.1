@@ -14,5 +14,15 @@ public class BCFactory implements ModInitializer {
         BCFactoryBlocks.register();
         BCFactoryBlockEntities.register();
         BCFactoryItems.register();
+
+        net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents
+            .modifyOutputEvent(buildcraft.core.BCCoreCreativeTab.TAB_KEY).register(output -> {
+                output.accept(BCFactoryBlocks.tank);
+                output.accept(BCFactoryBlocks.pump);
+                output.accept(BCFactoryBlocks.floodGate);
+                output.accept(BCFactoryBlocks.miningWell);
+                output.accept(BCFactoryBlocks.chute);
+                output.accept(BCFactoryBlocks.autoWorkbench);
+            });
     }
 }

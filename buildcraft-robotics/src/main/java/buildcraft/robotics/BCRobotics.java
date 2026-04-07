@@ -15,5 +15,10 @@ public class BCRobotics implements ModInitializer {
         LOGGER.info("BuildCraft Robotics initializing");
         BCRoboticsBlocks.register();
         BCRobBlockEntities.register();
+
+        net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents
+            .modifyOutputEvent(buildcraft.core.BCCoreCreativeTab.TAB_KEY).register(output -> {
+                output.accept(BCRoboticsBlocks.zonePlanner);
+            });
     }
 }

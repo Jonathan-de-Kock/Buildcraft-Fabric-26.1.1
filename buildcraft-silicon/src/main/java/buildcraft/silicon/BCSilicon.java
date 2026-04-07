@@ -15,5 +15,13 @@ public class BCSilicon implements ModInitializer {
         LOGGER.info("BuildCraft Silicon initializing");
         BCSiliconBlocks.register();
         BCSlnBlockEntities.register();
+
+        net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents
+            .modifyOutputEvent(buildcraft.core.BCCoreCreativeTab.TAB_KEY).register(output -> {
+                output.accept(BCSiliconBlocks.assemblyTable);
+                output.accept(BCSiliconBlocks.integrationTable);
+                output.accept(BCSiliconBlocks.chargingTable);
+                output.accept(BCSiliconBlocks.laser);
+            });
     }
 }
