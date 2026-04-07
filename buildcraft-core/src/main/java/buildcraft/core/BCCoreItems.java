@@ -22,11 +22,11 @@ public final class BCCoreItems {
 
     public static void register() {
         String modId = BCCore.MOD_ID;
-        wrench = BCRegistration.registerItem(modId, "wrench", new Item(new Item.Properties().stacksTo(1)));
-        gearWood = BCRegistration.registerItem(modId, "gear_wood", new Item(new Item.Properties()));
-        gearStone = BCRegistration.registerItem(modId, "gear_stone", new Item(new Item.Properties()));
-        gearIron = BCRegistration.registerItem(modId, "gear_iron", new Item(new Item.Properties()));
-        gearGold = BCRegistration.registerItem(modId, "gear_gold", new Item(new Item.Properties()));
-        gearDiamond = BCRegistration.registerItem(modId, "gear_diamond", new Item(new Item.Properties()));
+        wrench = BCRegistration.registerItem(modId, "wrench", new Item.Properties().stacksTo(1));
+        gearWood = BCRegistration.registerItem(modId, "gear_wood", new Item.Properties());
+        gearStone = BCRegistration.registerItem(modId, "gear_stone", new Item.Properties());
+        gearIron = BCRegistration.registerItem(modId, "gear_iron", new Item.Properties());
+        gearGold = BCRegistration.registerItem(modId, "gear_gold", new Item.Properties());
+        gearDiamond = BCRegistration.registerItem(modId, "gear_diamond", new Item.Properties());
     }
 }

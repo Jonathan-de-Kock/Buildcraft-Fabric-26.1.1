@@ -36,22 +36,22 @@ public final class BCCoreBlocks {
             .noCollision();
 
         markerVolume = BCRegistration.registerBlockAndItem(modId, "marker_volume",
-            new BlockMarkerVolume(markerProps));
+            markerProps, BlockMarkerVolume::new);
 
         markerPath = BCRegistration.registerBlockAndItem(modId, "marker_path",
-            new BlockMarkerPath(markerProps));
+            markerProps, BlockMarkerPath::new);
 
         decorated = BCRegistration.registerBlockAndItem(modId, "decorated",
-            new BlockBCBase(BlockBCBase.defaultBlockProperties()));
+            BlockBCBase.defaultBlockProperties(), BlockBCBase::new);
 
         BlockBehaviour.Properties engineProps = BlockBehaviour.Properties.of()
             .strength(5.0f, 10.0f)
             .sound(SoundType.METAL);
 
         engineRedstone = BCRegistration.registerBlockAndItem(modId, "engine_redstone",
-            new BlockEngineRedstone(engineProps));
+            engineProps, BlockEngineRedstone::new);
 
         engineCreative = BCRegistration.registerBlockAndItem(modId, "engine_creative",
-            new BlockEngineCreative(engineProps));
+            engineProps, BlockEngineCreative::new);
     }
 }
