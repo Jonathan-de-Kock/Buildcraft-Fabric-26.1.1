@@ -1,9 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [" S ", "SPS", " S "],
   "key": {
-    "S": { "item": "minecraft:stick" },
-    "P": { "item": "minecraft:oak_planks" }
+    "S": "minecraft:stick",
+    "P": "#minecraft:planks"
   },
-  "result": { "id": "buildcraftcore:gear_wood", "count": 1 }
+  "result": {
+    "id": "buildcraftcore:gear_wood"
+  }
 }

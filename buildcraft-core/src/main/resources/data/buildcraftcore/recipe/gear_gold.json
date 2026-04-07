@@ -1,9 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [" G ", "GIG", " G "],
   "key": {
-    "G": { "item": "minecraft:gold_ingot" },
-    "I": { "item": "buildcraftcore:gear_iron" }
+    "G": "minecraft:gold_ingot",
+    "I": "buildcraftcore:gear_iron"
   },
-  "result": { "id": "buildcraftcore:gear_gold", "count": 1 }
+  "result": {
+    "id": "buildcraftcore:gear_gold"
+  }
 }

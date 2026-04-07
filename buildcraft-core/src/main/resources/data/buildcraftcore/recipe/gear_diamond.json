@@ -1,9 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [" D ", "DGD", " D "],
   "key": {
-    "D": { "item": "minecraft:diamond" },
-    "G": { "item": "buildcraftcore:gear_gold" }
+    "D": "minecraft:diamond",
+    "G": "buildcraftcore:gear_gold"
   },
-  "result": { "id": "buildcraftcore:gear_diamond", "count": 1 }
+  "result": {
+    "id": "buildcraftcore:gear_diamond"
+  }
 }
