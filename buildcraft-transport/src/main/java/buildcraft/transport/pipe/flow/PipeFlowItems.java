@@ -314,4 +314,9 @@ public class PipeFlowItems extends PipeFlow implements IInjectable {
     public List<TravellingItem> getItems() {
         return Collections.unmodifiableList(items);
     }
+
+    /** Destroy all items currently in this pipe. Used by void pipe behaviour. */
+    public void voidAllItems() {
+        items.clear();
+    }
 }
