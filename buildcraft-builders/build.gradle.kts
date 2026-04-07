@@ -19,6 +19,8 @@ dependencies {
     implementation("net.fabricmc.fabric-api:fabric-api:$fabricApiVersion")
 
     api(project(":buildcraft-core"))
+
+    compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 }
 
 tasks.withType<JavaCompile> {

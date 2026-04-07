@@ -1,0 +1,8 @@
+{
+  "block.buildcraftfactory.tank": "Tank",
+  "block.buildcraftfactory.pump": "Pump",
+  "block.buildcraftfactory.flood_gate": "Flood Gate",
+  "block.buildcraftfactory.mining_well": "Mining Well",
+  "block.buildcraftfactory.chute": "Chute",
+  "block.buildcraftfactory.auto_workbench": "Auto Workbench"
+}

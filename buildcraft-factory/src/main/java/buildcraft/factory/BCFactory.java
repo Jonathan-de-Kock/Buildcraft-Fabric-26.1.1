@@ -11,5 +11,8 @@ public class BCFactory implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("BuildCraft Factory initializing");
+        BCFactoryBlocks.register();
+        BCFactoryBlockEntities.register();
+        BCFactoryItems.register();
     }
 }

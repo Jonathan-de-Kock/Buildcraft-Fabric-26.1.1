@@ -11,5 +11,7 @@ public class BCEnergy implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("BuildCraft Energy initializing");
+        BCEnergyBlocks.register();
+        BCEnergyFluids.register();
     }
 }
